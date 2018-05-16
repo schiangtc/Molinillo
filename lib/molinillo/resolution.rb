@@ -168,6 +168,7 @@ module Molinillo
         start_resolution
 
         while state
+          Rails.logger.info(state.inspect)
           break if !state.requirement && state.requirements.empty?
           indicate_progress
           if state.respond_to?(:pop_possibility_state) # DependencyState
